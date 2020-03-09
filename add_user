@@ -1,0 +1,21 @@
+python3 add_user.py $1 $2 $3 $4
+
+zip -r user_database.zip user_database
+
+curl -X POST https://content.dropboxapi.com/2/files/upload \
+    --header "Authorization: Bearer ERVVs5NPHYAAAAAAAAAAHptWLgYuL2WLojcNCNEdKXDi0qv2PWD8HbSQNsRZ_mY5" \
+    --header "Dropbox-API-Arg: {\"path\": \"/home/user_database.zip\",\"mode\": \"overwrite\",\"autorename\": true,\"mute\": false}"\
+    --header "Content-Type: application/octet-stream" \
+    --data-binary @user_database.zip
+
+curl -X POST https://content.dropboxapi.com/2/files/upload \
+    --header "Authorization: Bearer ERVVs5NPHYAAAAAAAAAAHptWLgYuL2WLojcNCNEdKXDi0qv2PWD8HbSQNsRZ_mY5" \
+    --header "Dropbox-API-Arg: {\"path\": \"/home/users.pickle\",\"mode\": \"overwrite\",\"autorename\": true,\"mute\": false}"\
+    --header "Content-Type: application/octet-stream" \
+    --data-binary @users.pickle
+
+curl -X POST https://content.dropboxapi.com/2/files/upload \
+    --header "Authorization: Bearer ERVVs5NPHYAAAAAAAAAAHptWLgYuL2WLojcNCNEdKXDi0qv2PWD8HbSQNsRZ_mY5" \
+    --header "Dropbox-API-Arg: {\"path\": \"/home/d.pickle\",\"mode\": \"overwrite\",\"autorename\": true,\"mute\": false}"\
+    --header "Content-Type: application/octet-stream" \
+    --data-binary @d.pickle

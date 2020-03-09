@@ -1,0 +1,24 @@
+pipenv shell
+pipenv install --skip-lock
+if [ ! -f facenet_keras.h5 ]; then
+    echo "Downloading facenet network"
+    wget --no-check-certificate --content-disposition https://github.com/satinder147/Attendance-using-Face/raw/master/facenet_keras.h5
+fi
+
+if [ ! -f user_database.zip ]; then
+    echo "Downloading facenet network"
+    wget --no-check-certificate --content-disposition https://www.dropbox.com/s/xvkjh15i5lg83hd/user_database.zip?dl=0
+fi
+
+unzip user_database.zip
+
+if [ ! -f d.pickle ]; then
+    echo "Downloading facenet network"
+    wget --no-check-certificate --content-disposition https://www.dropbox.com/s/zq2v6hxx4h3t64u/d.pickle?dl=0
+fi
+
+if [ ! -f users.pickle ]; then
+    echo "Downloading facenet network"
+    wget --no-check-certificate --content-disposition https://www.dropbox.com/s/7c0cvlnpm38rdns/users.pickle?dl=0
+fi
+
