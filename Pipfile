@@ -7,7 +7,7 @@ name = "pypi"
 python_version = "3.6"
 
 [packages]
-tensorflow = "==1.14"
+tensorflow = "==1.15.2"
 mtcnn = "*"
 numpy = "*"
 sklearn = "*"
